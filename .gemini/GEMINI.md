@@ -82,6 +82,21 @@ The application allows users to:
 6.  `geminiService` sends the Base64 video and a role-specific prompt (from `constants.tsx`) to the Gemini API.
 7.  The result is returned as a Markdown string and displayed in `AnalysisDisplay`.
 
+## Deployment (Cloudflare Pages)
+
+The easiest way to deploy this project for free is using **Cloudflare Pages**.
+
+1.  **Push to GitHub**: (Done) Ensure your code is on GitHub.
+2.  **Cloudflare Dashboard**: Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/) > **Workers & Pages**.
+3.  **Create Application**: Click **Create application** > **Pages** > **Connect to Git**.
+4.  **Select Repo**: Choose `video-analytics`.
+5.  **Configure Build**:
+    *   **Framework Preset**: Select `Vite`.
+    *   **Build command**: `npm run build` (default).
+    *   **Build output directory**: `dist` (default). **IMPORTANT: Ensure this is set to `dist`**.
+    *   **Environment Variables**: (Optional) You can add `GEMINI_API_KEY` if you want a default key, but the app supports BYOK so it's not strictly required.
+6.  **Deploy**: Click **Save and Deploy**. Cloudflare will build your site and give you a free URL (e.g., `video-analytics.pages.dev`).
+
 ## Conventions
 *   **Environment Variables:** Accessed via `process.env` shimmed by Vite config, not standard `import.meta.env`.
 *   **Styling:** Uses utility classes (Tailwind-style) with custom color palettes (e.g., `cinematic-900`).
