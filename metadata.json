@@ -1,0 +1,5 @@
+{
+  "name": "CineView AI",
+  "description": "Ứng dụng phân tích video chuyên sâu dưới nhiều góc nhìn điện ảnh (Đạo diễn, Biên kịch, Quay phim...) sử dụng Gemini AI.",
+  "requestFramePermissions": []
+}
