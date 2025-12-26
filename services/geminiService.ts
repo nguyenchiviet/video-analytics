@@ -11,7 +11,7 @@ export const analyzeVideo = async (
 ): Promise<string> => {
   try {
     if (!apiKey) throw new Error("Vui lòng nhập Gemini API Key.");
-    const ai = new GoogleGenAI(apiKey);
+    const ai = new GoogleGenAI({ apiKey });
 
     // Using gemini-3-flash-preview as recommended in guidelines.
     const modelId = "gemini-3-flash-preview";
